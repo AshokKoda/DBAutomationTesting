@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bridgelabz.db.automation.DBAutomationTesting" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-09T07:36:37" hostname="DESKTOP-FTC32SQ" time="0.114">
+  <properties/>
+  <testcase name="delete" classname="com.bridgelabz.db.automation.DBAutomationTesting" time="0.114"/>
+  <system-out><![CDATA[----------Delete data---------
+Person data deleted successfully.
+----------Fetch data from database---------
+100 Kumar Merge 35 
+101 Kalpu Dasu 25 
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
