@@ -11,4 +11,5 @@ public class Constant {
     public static String fetchQuery = "SELECT * FROM Person";
     public static String updateQuery = "UPDATE Person SET Firstname=?, Lastname=?, Age=? WHERE PersonID=?";
     public static String deleteQuery = "DELETE FROM Person WHERE PersonID=?";
+    public static String countQuery = "SELECT COUNT(PersonID) FROM Person";
 }

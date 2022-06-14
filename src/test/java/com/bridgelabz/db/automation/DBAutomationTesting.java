@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Random;
 
 public class DBAutomationTesting extends BaseClass {
 
@@ -17,10 +18,12 @@ public class DBAutomationTesting extends BaseClass {
         try {
             ps = connection.prepareStatement(Constant.insertQuery);
             System.out.println("----------Insert data---------");
-            ps.setInt(1, 102);
-            ps.setString(2, "demo");
-            ps.setString(3, "Week");
-            ps.setInt(4, 10);
+            Random rand = new Random();
+            int id = rand.nextInt(999);
+            ps.setInt(1, id);
+            ps.setString(2, "Lasya");
+            ps.setString(3, "Sree");
+            ps.setInt(4, 12);
             ps.executeUpdate();
             System.out.println("Data inserted successfully...");
             read();
@@ -42,6 +45,7 @@ public class DBAutomationTesting extends BaseClass {
             int age = rs.getInt(4);
             System.out.println(personID + " " + firstName + " " + lastName + " " + age + " ");
         }
+        count();
     }
 
     @Test
@@ -67,5 +71,17 @@ public class DBAutomationTesting extends BaseClass {
         ps.executeUpdate();
         System.out.println("Person data deleted successfully.");
         read();
+    }
+
+    @Test
+    public void count() throws SQLException {
+        connection = this.setUp();
+        Statement stmt = connection.createStatement();
+        ResultSet rs = stmt.executeQuery(Constant.countQuery);
+        while (rs.next()) {
+            int count = rs.getInt(1);
+            System.out.println("Total count : " + count);
+        }
+        System.out.println("-------------------------------------------------------");
     }
 }

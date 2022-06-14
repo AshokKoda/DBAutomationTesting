@@ -63,10 +63,10 @@ public class DBATesting {
             System.out.println("Connection is established.");
 
             DBATesting dbaTesting = new DBATesting();
-            //dbaTesting.create();
+            dbaTesting.create();
             //dbaTesting.update();
-            dbaTesting.delete();
-            dbaTesting.read();
+            //dbaTesting.delete();
+            //dbaTesting.read();
             connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
